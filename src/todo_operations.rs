@@ -11,7 +11,6 @@ static NOT_DONE: char = '✕';
 pub fn create_list(list_name: &str) -> io::Result<()> {
     let path = get_list_path(&list_name)?;
 
-    // check if the file already exists
     if path.exists() {
         Err(Error::new(
             ErrorKind::AlreadyExists,
